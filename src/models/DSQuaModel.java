@@ -12,6 +12,11 @@ public class DSQuaModel {
 	private int tongChiPhi;
 	private List<PhanQuaModel> listQua;
 
+	public DSQuaModel() {
+		this.giaTriQua = 0;
+		this.tongChiPhi = 0;
+	}
+
 	public String getTenDS() {
 		return tenDS;
 	}

@@ -75,7 +75,9 @@ public class DSQuaService {
 					q.setID(rs_1.getInt("ID"));
 					q.setTenQua(rs_1.getString("tenQua"));
 					q.setIdNguoiNhan(rs_1.getInt("idNguoiNhan"));
+					q.setTenNguoiNhan(q.getTenNguoiNhan(rs_1.getInt("idNguoiNhan")));
 					q.setIdDsQua(rs.getInt(1));
+					q.setGiaTri(ds.getGiaTriQua());
 					listQua.add(q);
 				}
 				prst.close();
@@ -189,27 +191,5 @@ public class DSQuaService {
 		return list;
 	}
 
-	// Theo Ho
-	public List<DSQuaModel> filtDSQua(int id) {
-		List<DSQuaModel> list = new ArrayList<>();
-		String query = "SELECT * from ds_qua ds INNER JOIN"
-					+ "thanh_vien_ho tv ON ds.idNguoiNhan = tv.idNhanKhau " 
-					+ " WHERE tv.idHoKhau = " +id;
-		try {
-			Connection connection = MysqlConnection.getMysqlConnection();
-			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(query);
-			ResultSet rs = preparedStatement.executeQuery();
-			while (rs.next()) {
-				DSQuaModel temp = new DSQuaModel();
-				temp = this.getDSQua(rs.getInt(1));
-				list.add(temp);
-			}
-			preparedStatement.close();
-			connection.close();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		return list;
-	}
 
 }

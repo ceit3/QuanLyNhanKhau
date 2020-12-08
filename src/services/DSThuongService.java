@@ -77,6 +77,7 @@ public class DSThuongService {
 					q.setGiaTriThuong(rs_1.getInt("giaTriThuong"));
 					q.setThanhTich(rs_1.getString("thanhTich"));
 					q.setIdDsThuong(rs.getInt(1));
+					q.setTenNguoiNhan(q.getTenNguoiNhan(rs_1.getInt("idNguoiNhan")));
 					listThuong.add(q);
 				}
 			} catch (Exception e) {
@@ -192,27 +193,8 @@ public class DSThuongService {
 		return list;
 	}
 
-	// Theo Ho
-	public List<DSThuongModel> filtDSThuong(int id) {
-		List<DSThuongModel> list = new ArrayList<>();
-		String query = "SELECT * from ds_thuong ds INNER JOIN " + "thanh_vien_ho tv ON ds.idNguoiNhan = tv.idNhanKhau "
-				+ " WHERE tv.idHoKhau = " + id;
-		try {
-			Connection connection = MysqlConnection.getMysqlConnection();
-			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(query);
-			ResultSet rs = preparedStatement.executeQuery();
-			while (rs.next()) {
-				DSThuongModel temp = new DSThuongModel();
-				temp = this.getDSThuong(rs.getInt(1));
-				list.add(temp);
-			}
-			preparedStatement.close();
-			connection.close();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		return list;
-	}
+	
 
+	
 }
 

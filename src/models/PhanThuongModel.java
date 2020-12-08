@@ -1,5 +1,12 @@
 package models;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import services.MysqlConnection;
+
 public class PhanThuongModel {
 	private int ID;
 	private String tenThuong;
@@ -7,7 +14,12 @@ public class PhanThuongModel {
 	private int idNguoiNhan;
 	private String thanhTich;
 	private int giaTriThuong;
+	private String tenNguoiNhan;
 
+	public PhanThuongModel() {
+		this.giaTriThuong = 0;
+	}
+	
 	public int getID() {
 		return ID;
 	}
@@ -54,5 +66,25 @@ public class PhanThuongModel {
 
 	public void setIdNguoiNhan(int idNguoiNhan) {
 		this.idNguoiNhan = idNguoiNhan;
+	}
+
+	public String getTenNguoiNhan() {
+		return tenNguoiNhan;
+	}
+	
+	public String getTenNguoiNhan(int id) throws ClassNotFoundException, SQLException {
+		String query = "SELECT hoTen from nhan_khau where ID = "+id;
+		Connection connection = MysqlConnection.getMysqlConnection();
+		PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+		ResultSet rs = preparedStatement.executeQuery();
+		this.tenNguoiNhan = rs.getString(1);
+		preparedStatement.close();
+		connection.close();
+		return tenNguoiNhan;
+	}
+
+
+	public void setTenNguoiNhan(String tenNguoiNhan) {
+		this.tenNguoiNhan = tenNguoiNhan;
 	}
 }

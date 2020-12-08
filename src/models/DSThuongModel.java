@@ -8,6 +8,11 @@ public class DSThuongModel {
     private int namHoc;
     private int tongChiPhi;
     private List<PhanThuongModel> listThuong;
+    
+    public DSThuongModel() {
+    	this.tongChiPhi=0;
+    }
+
 
     public int getID() {
         return ID;
@@ -48,4 +53,6 @@ public class DSThuongModel {
 	public void setListThuong(List<PhanThuongModel> listThuong) {
 		this.listThuong = listThuong;
 	}
+
+	
 }
