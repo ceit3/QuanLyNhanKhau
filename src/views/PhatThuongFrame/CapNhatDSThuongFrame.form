@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.PhatThuongFrame.CapNhatDSThuongFrame">
+  <grid id="27dc6" binding="rootPane" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="655" height="560"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="65cd8" class="javax.swing.JLabel" binding="tenDSLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="19" left="15" bottom="0" right="0" weightx="0.8" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Tên danh sách"/>
+        </properties>
+      </component>
+      <component id="17ee9" class="javax.swing.JLabel" binding="namLb">
+        <constraints>
+          <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="5" left="15" bottom="0" right="0" weightx="0.8" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Năm học"/>
+        </properties>
+      </component>
+      <component id="d7817" class="javax.swing.JLabel" binding="tenThuongLb">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Tên phần thưởng"/>
+        </properties>
+      </component>
+      <component id="72861" class="javax.swing.JTextField" binding="tenThuongTxf">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="338d2" class="javax.swing.JLabel" binding="giaTriLb">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Giá trị"/>
+        </properties>
+      </component>
+      <component id="977ea" class="javax.swing.JTextField" binding="giaTriTxf">
+        <constraints>
+          <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="6915b" class="javax.swing.JButton" binding="themButton">
+        <constraints>
+          <grid row="10" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Thêm"/>
+        </properties>
+      </component>
+      <hspacer id="7f601">
+        <constraints>
+          <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+      <component id="503aa" class="javax.swing.JLabel" binding="tenNguoiNhanLb">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Tên người nhận"/>
+        </properties>
+      </component>
+      <component id="8768b" class="javax.swing.JTextField" binding="tenNguoiNhanTxf">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <scrollpane id="fdb91" binding="tableScrollPane">
+        <constraints>
+          <grid row="3" column="0" row-span="3" col-span="7" vsize-policy="7" hsize-policy="7" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="2.0" weighty="8.0"/>
+        </constraints>
+        <properties>
+          <minimumSize width="17" height="300"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="52aa9" class="javax.swing.JTable" binding="updateTable">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="c7c7b" class="javax.swing.JButton" binding="updateBtn">
+        <constraints>
+          <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.8" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Cập Nhật"/>
+        </properties>
+      </component>
+      <component id="11edc" class="javax.swing.JButton" binding="huyButton">
+        <constraints>
+          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.8" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Hủy"/>
+        </properties>
+      </component>
+      <component id="eb764" class="javax.swing.JLabel" binding="thanhTichLb">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Thành tích"/>
+        </properties>
+      </component>
+      <component id="2737a" class="javax.swing.JTextField" binding="thanhTichTxf">
+        <constraints>
+          <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="178dd" class="javax.swing.JLabel" binding="tenDSTxf">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="7c4f" class="javax.swing.JLabel" binding="namTxf">
+        <constraints>
+          <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="45829" class="javax.swing.JButton" binding="deleteBtn">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+          <foreground color="-62459"/>
+          <hideActionText value="false"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Xóa danh sách"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

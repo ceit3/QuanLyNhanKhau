@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.QLPhatQuaFrame">
+  <grid id="27dc6" binding="rootPane" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="515" height="535"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="4fa26" binding="viewPane" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="0" column="1" row-span="10" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="5.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="3380a" binding="sidePane" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="0" column="0" row-span="5" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="0.5"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="1cd2" class="javax.swing.JButton" binding="homeButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag top="40" left="0" bottom="0" right="0" weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <maximumSize width="78" height="50"/>
+              <minimumSize width="78" height="50"/>
+              <preferredSize width="78" height="50"/>
+              <text value="Trang Chủ"/>
+            </properties>
+          </component>
+          <hspacer id="d42d8">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+          <component id="800c6" class="javax.swing.JButton" binding="dsThuongButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <maximumSize width="78" height="40"/>
+              <minimumSize width="78" height="40"/>
+              <preferredSize width="78" height="40"/>
+              <text value="Danh Sách Thưởng"/>
+            </properties>
+          </component>
+          <component id="611cf" class="javax.swing.JButton" binding="dsQuaButton">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <maximumSize width="78" height="40"/>
+              <minimumSize width="78" height="40"/>
+              <preferredSize width="78" height="40"/>
+              <text value="Danh Sách Quà"/>
+            </properties>
+          </component>
+          <component id="cd956" class="javax.swing.JButton" binding="tkeDsButton">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <maximumSize width="78" height="40"/>
+              <minimumSize width="78" height="40"/>
+              <preferredSize width="78" height="40"/>
+              <text value="Thống kê theo Danh Sách"/>
+            </properties>
+          </component>
+          <component id="9a708" class="javax.swing.JButton" binding="tkeHoButton">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <maximumSize width="78" height="40"/>
+              <minimumSize width="78" height="40"/>
+              <preferredSize width="78" height="40"/>
+              <text value="Thống kê theo Hộ"/>
+            </properties>
+          </component>
+          <component id="f6749" class="javax.swing.JButton" binding="logOutBtn">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Đăng xuất"/>
+            </properties>
+          </component>
+          <vspacer id="3a748">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0" ipady="100"/>
+            </constraints>
+          </vspacer>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

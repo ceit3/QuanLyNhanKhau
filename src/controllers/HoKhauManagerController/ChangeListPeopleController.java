@@ -38,8 +38,8 @@ public class ChangeListPeopleController {
     private final NhanKhauService nhanKhauService = new NhanKhauService();
     private final HoKhauService hoKhauService= new HoKhauService();
     private final TableModelHoKhau tableModelHoKhau = new TableModelHoKhau();
-    private final String[] COLUMNS_1 = {"Họ tên", "Giới tính", "Ngày sinh", "Địa chỉ hiện nay", "Số CMT"};
-    private final String[] COLUMNS_2= {"Họ tên", "Ngày sinh", "Quan hệ với chủ hộ"};
+    private final String[] COLUMNS_1 = {"Há»� tÃªn", "Giá»›i tÃ­nh", "NgÃ y sinh", "Ä�á»‹a chá»‰ hiá»‡n nay", "Sá»‘ CMT"};
+    private final String[] COLUMNS_2= {"Há»� tÃªn", "NgÃ y sinh", "Quan há»‡ vá»›i chá»§ há»™"};
     private NhanKhauBean peopleSelected;
     private MemOfFamily memSelected;
     
@@ -105,12 +105,12 @@ public class ChangeListPeopleController {
                     if (hoKhauService.checkPerson(peopleSelected.getNhanKhauModel().getID())) {
                         MemOfFamily temp = new MemOfFamily();
                         temp.setNhanKhau(peopleSelected);
-                        String quanHeVoiChuHo = JOptionPane.showInputDialog(null, "Nhập quan hệ với chủ hộ:");
+                        String quanHeVoiChuHo = JOptionPane.showInputDialog(null, "Nháº­p quan há»‡ vá»›i chá»§ há»™:");
                         temp.getThanhVienCuaHoModel().setQuanHeVoiChuHo(quanHeVoiChuHo);
                         listMember.add(temp);
                         setData();
                     } else {
-                        JOptionPane.showMessageDialog(null, "Nhân khẩu đã nằm trong hộ khẩu khác!", "Warning", JOptionPane.NO_OPTION);
+                        JOptionPane.showMessageDialog(null, "NhÃ¢n kháº©u Ä‘Ã£ náº±m trong há»™ kháº©u khÃ¡c!", "Warning", JOptionPane.NO_OPTION);
                     }
                     
                 } catch (Exception exception) {
@@ -153,7 +153,9 @@ public class ChangeListPeopleController {
             public boolean editCellAt(int row, int column, EventObject e) {
                 return false;   //To change body of generated methods, choose Tools | Templates.
             }
+           
         };
+
         // thiet ke bang
         
         table_people.getTableHeader().setFont(new Font("Arial", Font.BOLD, 14));

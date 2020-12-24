@@ -4,13 +4,12 @@ import Bean.NhanKhauBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import models.ChungMinhThuModel;
-import models.GiaDinhModel;
-import models.NhanKhauModel;
-import models.TieuSuModel;
+
+import models.*;
 
 /**
  *
@@ -304,5 +303,29 @@ public class NhanKhauService {
      */
     private void exceptionHandle(String message) {
         JOptionPane.showMessageDialog(null, message, "Warning", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public List<String> getNhanKhauUnder18() {
+        List<String> s = new ArrayList<>();
+        try{
+            Connection connection = MysqlConnection.getMysqlConnection();
+            String query = "SELECT hoTen FROM nhan_khau WHERE YEAR(NOW()) - YEAR(namSinh) <= 18";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet rs = preparedStatement.executeQuery();
+            while(rs.next()){
+                String temp = rs.getString("hoTen");
+                s.add(temp);
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("error get nhan_khau under 18!");
+            e.printStackTrace();
+
+        }
+        return s;
     }
 }

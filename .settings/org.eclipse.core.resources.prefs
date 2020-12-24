@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/Bean/HoKhauBean.java=UTF-8
+encoding//src/controllers/HoKhauManagerController/ChangeListPeopleController.java=UTF-8
+encoding//src/models/DSQuaModel.java=UTF-8
+encoding//src/models/DSThuongModel.java=UTF-8
 encoding//src/services/DSQuaService.java=UTF-8
 encoding//src/services/DSThuongService.java=UTF-8
+encoding//src/views/HoKhauManagePanel.java=UTF-8

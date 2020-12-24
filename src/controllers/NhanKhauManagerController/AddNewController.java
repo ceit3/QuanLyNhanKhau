@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import models.ChungMinhThuModel;
 import models.NhanKhauModel;
+import quanly.QuanLy;
 import services.MysqlConnection;
 
 /**
@@ -47,7 +48,7 @@ public class AddNewController {
         preparedStatement.setString(17, nhanKhau.getNgheNghiep());
         preparedStatement.setString(18, nhanKhau.getNoiLamViec());
         preparedStatement.setInt(19, nhanKhau.getIdNguoiTao());
-        java.sql.Date createDate = new java.sql.Date(quanlynhankhau.QuanLyNhanKhau.calendar.getTime().getTime());
+        java.sql.Date createDate = new java.sql.Date(QuanLy.calendar.getTime().getTime());
         preparedStatement.setDate(20, createDate);
         
         preparedStatement.executeUpdate();

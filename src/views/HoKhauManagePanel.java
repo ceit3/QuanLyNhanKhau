@@ -1,4 +1,5 @@
 /*
+
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -13,7 +14,7 @@ import views.HoKhauManagerFrame.ThemMoiHoKhau;
 
 /**
  *
- * @author Ai làm thì diền tên vào
+ * @author Ai lÃ m thÃ¬ diá»�n tÃªn vÃ o
  */
 public class HoKhauManagePanel extends javax.swing.JPanel {
     
@@ -48,7 +49,7 @@ public class HoKhauManagePanel extends javax.swing.JPanel {
 
         themMoiBtn.setBackground(new java.awt.Color(255, 255, 255));
         themMoiBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        themMoiBtn.setText("Thêm mới");
+        themMoiBtn.setText("ThÃªm má»›i");
         themMoiBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 themMoiBtnActionPerformed(evt);
@@ -64,7 +65,7 @@ public class HoKhauManagePanel extends javax.swing.JPanel {
 
         tachHoKhauBtn.setBackground(new java.awt.Color(255, 255, 255));
         tachHoKhauBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        tachHoKhauBtn.setText("Tách HK");
+        tachHoKhauBtn.setText("TÃ¡ch HK");
         tachHoKhauBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tachHoKhauBtnActionPerformed(evt);
@@ -73,7 +74,7 @@ public class HoKhauManagePanel extends javax.swing.JPanel {
 
         chuyenDiBtn.setBackground(new java.awt.Color(255, 255, 255));
         chuyenDiBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        chuyenDiBtn.setText("Chuyển đi");
+        chuyenDiBtn.setText("Chuyá»ƒn Ä‘i");
         chuyenDiBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chuyenDiBtnActionPerformed(evt);

@@ -45,12 +45,11 @@ public class LoginUI extends javax.swing.JFrame {
         try {
             if (this.cont.login(userName, password)) {
                 dispose();
-                MainFrame mainFrame = new MainFrame();
-                mainFrame.setLocationRelativeTo(null);
-                mainFrame.setResizable(false);
-                mainFrame.setVisible(true);
+                HomeFrame home = new HomeFrame(userName);
+                home.setLocationRelativeTo(null);
+                home.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Sai thong tin dang nhap", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Sai thông tin đăng nhập", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         } catch (SQLException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Có lỗi xảy ra!! Vui lòng kiểm tra lại!", "Warning!!", JOptionPane.ERROR_MESSAGE);
@@ -230,4 +229,5 @@ public class LoginUI extends javax.swing.JFrame {
     private javax.swing.JPasswordField txbPasswd;
     private javax.swing.JTextField txbUserName;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -63,6 +63,23 @@ public class PhanThuongModel {
 	public int getIdNguoiNhan() {
 		return idNguoiNhan;
 	}
+	public int getIdNguoiNhan(String hoTen) throws ClassNotFoundException, SQLException{
+		String query = "SELECT ID from nhan_khau where hoTen = '"+hoTen + "'";
+		Connection connection = MysqlConnection.getMysqlConnection();
+		try{
+			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.next()) {
+				this.idNguoiNhan = rs.getInt("ID");
+			}
+			preparedStatement.close();
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+		}finally {
+			connection.close();
+		}
+		return idNguoiNhan;
+	}
 
 	public void setIdNguoiNhan(int idNguoiNhan) {
 		this.idNguoiNhan = idNguoiNhan;
@@ -75,11 +92,17 @@ public class PhanThuongModel {
 	public String getTenNguoiNhan(int id) throws ClassNotFoundException, SQLException {
 		String query = "SELECT hoTen from nhan_khau where ID = "+id;
 		Connection connection = MysqlConnection.getMysqlConnection();
-		PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(query);
-		ResultSet rs = preparedStatement.executeQuery();
-		this.tenNguoiNhan = rs.getString(1);
-		preparedStatement.close();
-		connection.close();
+		try{
+			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.next())
+				this.tenNguoiNhan = rs.getString("hoTen");
+			preparedStatement.close();
+		}catch (Exception e){
+			System.out.println(e.getStackTrace());
+		}finally {
+			connection.close();
+		}
 		return tenNguoiNhan;
 	}
 
