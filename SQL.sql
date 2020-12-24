@@ -564,3 +564,105 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+/****************************************************************/
+--
+-- Cấu trúc bảng cho bảng `ds_qua`
+--
+
+CREATE TABLE `ds_qua` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `tenDS` varchar(200) NOT NULL,
+  `tenDip` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `thoiGian` int(15) NOT NULL,
+  `tongChiPhi` int(15) DEFAULT NULL,
+  `giaTriQua` int(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Cấu trúc bảng cho bảng `ds_thuong`
+--
+
+CREATE TABLE `ds_thuong` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `tenDs` varchar(200) NOT NULL,
+  `namHoc` int(6) NOT NULL,
+  `tongChiPhi` int(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Cấu trúc bảng cho bảng `phan_qua`
+--
+
+CREATE TABLE `phan_qua` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `tenQua` varchar(100),
+  `idDsQua` int(11) NOT NULL,
+  `idNguoiNhan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Cấu trúc bảng cho bảng `phan_thuong`
+--
+
+CREATE TABLE `phan_thuong` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `tenThuong` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idDsThuong` int(11) NOT NULL,
+  `idNguoiNhan` int(11) NOT NULL,
+  `giaTriThuong` int(15) DEFAULT NULL,
+  `thanhTich` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Các ràng buộc cho bảng `phan_thuong`
+--
+ALTER TABLE `phan_thuong`
+  ADD KEY `idNguoiNhan` (`idNguoiNhan`),
+  ADD KEY `idDsThuong` (`idDsThuong`),
+  ADD CONSTRAINT `phan_thuong_ibfk_1` FOREIGN KEY (`idDsThuong`) REFERENCES `ds_thuong` (`ID`),
+  ADD CONSTRAINT `phan_thuong_ibfk_2` FOREIGN KEY (`idNguoiNhan`) REFERENCES `nhan_khau` (`ID`);
+--
+-- Các ràng buộc cho bảng `phan_qua`
+--
+ALTER TABLE `phan_qua`
+  ADD KEY `idNguoiNhan` (`idNguoiNhan`),
+  ADD KEY `idDsQua` (`idDsQua`),
+  ADD CONSTRAINT `phan_qua_ibfk_1` FOREIGN KEY (`idDsQua`) REFERENCES `ds_qua` (`ID`),
+  ADD CONSTRAINT `phan_qua_ibfk_2` FOREIGN KEY (`idNguoiNhan`) REFERENCES `nhan_khau` (`ID`);
+
+-----------------------------------------------------------------
+/* Chen ds_qua*/
+INSERT INTO `ds_qua`(`tenDS`, `tenDip`, `thoiGian`, `tongChiPhi`, `giaTriQua`) VALUES ('DS Trung Thu 2020', 'Trung Thu', '2020', '300000', '100000');
+INSERT INTO `ds_qua`(`tenDS`, `tenDip`, `thoiGian`, `tongChiPhi`, `giaTriQua`) VALUES ('DS Tết Thiếu Nhi 2020', 'Tết Thiếu Nhi', '2020', '220000', '110000');
+INSERT INTO `ds_qua`(`tenDS`, `tenDip`, `thoiGian`, `tongChiPhi`, `giaTriQua`) VALUES ('DS Trung Thu 2019', 'Trung Thu', '2019', '100000', '50000');
+INSERT INTO `ds_qua`(`tenDS`, `tenDip`, `thoiGian`, `tongChiPhi`, `giaTriQua`) VALUES ('DS Tết Thiếu Nhi 2019', 'Tết Thiếu Nhi', '2019', '120000', '40000');
+
+/*Chen phan_qua*/
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Bánh Trung Thu', 2, 36);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Bánh Trung Thu', 2, 32);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Bánh Trung Thu', 2, 31);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Vở', 3, 26);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Vở', 3, 27);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Bánh Trung Thu', 4, 28);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Bánh Trung Thu', 4, 29);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Vở', 5, 29);
+INSERT INTO `phan_qua`(`tenQua`, `idDsQua`, `idNguoiNhan`) VALUES ('Vở', 5, 32);
+
+/*Chen ds_thuong*/
+INSERT INTO `ds_thuong`(`ID`, `tenDs`, `namHoc`, `tongChiPhi`) VALUES (1, 'Thưởng Năm Nay', 2020, 3000000);
+INSERT INTO `ds_thuong`(`ID`, `tenDs`, `namHoc`, `tongChiPhi`) VALUES (2, 'Thưởng Năm 2019', 2019, 5000000);
+INSERT INTO `ds_thuong`(`ID`, `tenDs`, `namHoc`, `tongChiPhi`) VALUES (3, 'Năm học 2018', 2018, 1000000);
+
+/*Chen phan_thuong*/
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (1, 'Tiền', 1, 27, 200000, 'HSG Quốc Gia');
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (2, 'Tiền', 1, 29, 100000, 'HSG Tỉnh');
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (3, 'Tiền', 1, 31, 1000000, 'Quán Quân Olympia');
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (4, 'Bim bim', 2, 34, 10000, 'Vào lớp 1');
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (5, 'Tiền', 2, 35, 1000000, 'HSG Tỉnh');
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (6, 'Cặp', 2, 31, 100000, 'Cháu ngoan Bác Hồ');
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (7, 'Xe đạp điện', 3, 32, 3000000, 'Đỗ Cấp 3');
+INSERT INTO `phan_thuong`(`ID`, `tenThuong`, `idDsThuong`, `idNguoiNhan`, `giaTriThuong`, `thanhTich`) VALUES (8, 'Máy tính', 3, 35, 100000000, 'Đỗ Đại học');
+
+
