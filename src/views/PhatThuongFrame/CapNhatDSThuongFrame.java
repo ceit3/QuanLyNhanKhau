@@ -208,7 +208,8 @@ public class CapNhatDSThuongFrame extends JFrame{
                 PhanThuongModel thuong = new PhanThuongModel();
                 Vector v = (Vector) data.get(i);
                 v.setSize(5);
-                thuong.setIdDsThuong((Integer)(v.get(0)));
+                String ids = String.valueOf(v.get(0));
+                thuong.setIdDsThuong(Integer.parseInt(ids));
                 thuong.setTenNguoiNhan((String) v.get(1));
                 int id = thuong.getIdNguoiNhan(thuong.getTenNguoiNhan());
                 thuong.setIdNguoiNhan(id);

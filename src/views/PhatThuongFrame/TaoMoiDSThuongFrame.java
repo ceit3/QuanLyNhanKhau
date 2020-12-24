@@ -185,7 +185,7 @@ public class TaoMoiDSThuongFrame extends JFrame{
             thuong.setIdNguoiNhan(id);
             thuong.setTenThuong((String) v.get(1));
             thuong.setThanhTich((String) v.get(2));
-            String gt = (String) v.get(3);
+            String gt = String.valueOf(v.get(3)) ;
             thuong.setGiaTriThuong(Integer.parseInt(gt) );
             tong += thuong.getGiaTriThuong();
             this.list.add(thuong);

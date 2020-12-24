@@ -187,7 +187,8 @@ public class CapNhatDSQuaFrame extends JFrame {
             Vector v = (Vector) data.get(i);
             v.setSize(4);
 
-            qua.setID((Integer)v.get(0));
+            String ids = String.valueOf(v.get(0));
+            qua.setID(Integer.parseInt(ids));
             qua.setTenNguoiNhan((String) v.get(1));
             int id = qua.getIdNguoiNhan(qua.getTenNguoiNhan());
             qua.setIdNguoiNhan(id);

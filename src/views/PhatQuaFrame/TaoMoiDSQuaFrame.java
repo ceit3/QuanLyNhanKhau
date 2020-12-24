@@ -175,7 +175,7 @@ public class TaoMoiDSQuaFrame extends JFrame{
             int id = qua.getIdNguoiNhan(qua.getTenNguoiNhan());
             qua.setIdNguoiNhan(id);
             qua.setTenQua((String) v.get(1));
-            String gt = (String)(v.get(2));
+            String gt = String.valueOf(v.get(2));
             qua.setGiaTri( Integer.parseInt(gt));
             dsQuaModel.setGiaTriQua(qua.getGiaTri());
             list.add(qua);
