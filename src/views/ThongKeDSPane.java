@@ -18,6 +18,7 @@ public class ThongKeDSPane extends JPanel{
 
     public ThongKeDSPane(JFrame parentFrame) throws SQLException, ClassNotFoundException {
         this.parentFrame = parentFrame;
+        this.setSize(GuiConstants.getPaneInitWidth(), GuiConstants.getPaneInitHeight());
         this.add(rootPane);
         this.controller = new ThongKeDSPaneController(chooseBox, fromTxf, toTxf,tableJpn);
         this.controller.setParentJFrame(parentFrame);

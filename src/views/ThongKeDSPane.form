@@ -2,17 +2,20 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.ThongKeDSPane">
   <grid id="27dc6" binding="rootPane" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="15" y="20" width="789" height="729"/>
+      <xy x="15" y="20" width="1200" height="800"/>
     </constraints>
     <properties>
-      <background color="-1"/>
+      <background color="-1708562"/>
+      <font size="14" style="0"/>
+      <minimumSize width="1200" height="800"/>
+      <preferredSize width="1200" height="800"/>
     </properties>
-    <border type="none" title="Thống Kê"/>
+    <border type="none" title="Thống kê theo DS"/>
     <children>
       <component id="dbd54" class="javax.swing.JComboBox" binding="chooseBox">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
-          <gridbag top="15" left="15" bottom="0" right="0" weightx="1.0" weighty="0.5" ipadx="5" ipady="10"/>
+          <grid row="0" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="1.0" weighty="0.5" ipadx="5" ipady="10"/>
         </constraints>
         <properties>
           <background color="-1"/>
@@ -21,28 +24,29 @@
           <maximumSize width="80" height="30"/>
           <minimumSize width="80" height="30"/>
           <model>
-            <item value="DS Qua"/>
-            <item value="DS Thuong"/>
+            <item value="DS Quà"/>
+            <item value="DS Thuởng"/>
           </model>
           <popupVisible value="false"/>
         </properties>
       </component>
       <component id="99bae" class="javax.swing.JLabel" binding="fromLb">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="15" left="15" bottom="0" right="0" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
         </constraints>
         <properties>
+          <font size="14" style="1"/>
           <foreground color="-15259865"/>
           <text value="Từ năm:"/>
         </properties>
       </component>
       <component id="42564" class="javax.swing.JTextField" binding="fromTxf">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="13" left="15" bottom="0" right="0" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
         </constraints>
         <properties>
           <background color="-1"/>
@@ -51,11 +55,12 @@
       </component>
       <component id="ab061" class="javax.swing.JLabel" binding="ThongKeLb">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="15" left="15" bottom="0" right="0" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
         </constraints>
         <properties>
           <background color="-1"/>
+          <font size="14" style="1"/>
           <foreground color="-15259865"/>
           <maximumSize width="100" height="30"/>
           <minimumSize width="100" height="30"/>
@@ -65,58 +70,80 @@
       </component>
       <component id="98a24" class="javax.swing.JLabel" binding="toLb">
         <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="15" left="15" bottom="0" right="0" weightx="0.03" weighty="0.5" ipadx="5" ipady="10"/>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.03" weighty="0.5" ipadx="5" ipady="10"/>
         </constraints>
         <properties>
+          <font size="14" style="1"/>
           <foreground color="-15259865"/>
-          <maximumSize width="30" height="16"/>
-          <minimumSize width="30" height="16"/>
+          <maximumSize width="60" height="16"/>
+          <minimumSize width="60" height="16"/>
           <text value="đến năm:"/>
         </properties>
       </component>
+      <component id="97163" class="javax.swing.JButton" binding="filtBtn">
+        <constraints>
+          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="0" weightx="0.5" weighty="0.5"/>
+        </constraints>
+        <properties>
+          <background color="-16013503"/>
+          <borderPainted value="true"/>
+          <doubleBuffered value="true"/>
+          <focusable value="false"/>
+          <icon value="Icons/magnifying-glass.png"/>
+          <maximumSize width="78" height="38"/>
+          <minimumSize width="78" height="38"/>
+          <preferredSize width="78" height="38"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <grid id="910d5" binding="tableJpn" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="10" bottom="15" right="15" weightx="0.0" weighty="6.0"/>
+        </constraints>
+        <properties>
+          <background color="-1708562"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <scrollpane id="e4528">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1708562"/>
+              <opaque value="true"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </scrollpane>
+          <hspacer id="9980f">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <vspacer id="2bbf1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+        </children>
+      </grid>
       <component id="324ad" class="javax.swing.JTextField" binding="toTxf">
         <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="13" left="15" bottom="0" right="0" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
         </constraints>
         <properties>
           <background color="-1"/>
           <text value=""/>
         </properties>
       </component>
-      <component id="97163" class="javax.swing.JButton" binding="filtBtn">
-        <constraints>
-          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-          <gridbag top="13" left="15" bottom="0" right="0" weightx="0.1" weighty="0.5" ipadx="5" ipady="10"/>
-        </constraints>
-        <properties>
-          <background color="-14513087"/>
-          <borderPainted value="true"/>
-          <maximumSize width="49" height="20"/>
-          <minimumSize width="49" height="20"/>
-          <preferredSize width="49" height="20"/>
-          <text value="Lọc"/>
-        </properties>
-      </component>
-      <grid id="910d5" binding="tableJpn" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="6" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
-      </grid>
-      <hspacer id="d299">
-        <constraints>
-          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="1.0" weighty="0.0"/>
-        </constraints>
-      </hspacer>
     </children>
   </grid>
 </form>

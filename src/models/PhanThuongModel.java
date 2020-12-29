@@ -75,6 +75,7 @@ public class PhanThuongModel {
 			preparedStatement.close();
 		} catch (Exception e){
 			System.out.println(e.getMessage());
+			return 0;
 		}finally {
 			connection.close();
 		}

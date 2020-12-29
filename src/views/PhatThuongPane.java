@@ -26,8 +26,9 @@ public class PhatThuongPane extends JPanel{
     private DSThuongService dsThuongService;
 
     public PhatThuongPane(JFrame parentFrame) throws SQLException, ClassNotFoundException {
-        this.add(rootPane);
         this.parentJFrame = parentFrame;
+        this.setSize(GuiConstants.getPaneInitWidth(), GuiConstants.getPaneInitHeight());
+        this.add(rootPane);
         initComponents();
         controller = new PhatThuongPaneController(tablePanel, jtfSearch);
         controller.setParentJFrame(parentJFrame);

@@ -44,7 +44,7 @@ public class CapNhatDSQuaFrame extends JFrame {
     private DSQuaModel dsQuaModel;
     private CapNhatDSQuaController controller;
 
-    public List<PhanQuaModel> list = new ArrayList<>();
+    public List<PhanQuaModel> list;
     Vector data = new Vector<>();
     Vector header = new Vector<>();
 
@@ -55,6 +55,7 @@ public class CapNhatDSQuaFrame extends JFrame {
         this.parentFrame.setEnabled(false);
         this.dsQuaModel = select;
         this.dsQuaService = new DSQuaService();
+        list = new ArrayList<>();
         initComponents();
         setTitle("Cập nhật danh sách quà");
         setSize(1000,400);
@@ -135,13 +136,13 @@ public class CapNhatDSQuaFrame extends JFrame {
 
 
     public void updateBtnActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, ClassNotFoundException {//GEN-FIRST:event_CreateBtnActionPerformed
-        if (check(list)) {
+        if (validateValueInForm() && check(list)) {
             list = loadDataTable();
             this.dsQuaModel.setListQua(list);
             try {
                 if (dsQuaService.updateDSQua(this.dsQuaModel.getID(), this.dsQuaModel.getListQua())) {
                     JOptionPane.showMessageDialog(null, "Cập nhật thành công!!");
-                    close();
+                    this.close();
                     parentController.refreshData();
                 }
             } catch (Exception e) {
@@ -156,7 +157,7 @@ public class CapNhatDSQuaFrame extends JFrame {
         try{
             if(dsQuaService.delete(dsQuaModel.getID())){
                 JOptionPane.showMessageDialog(null, "Xóa thành công!!");
-                close();
+                this.close();
                 parentController.refreshData();
             }
         }catch(Exception e){
@@ -166,7 +167,7 @@ public class CapNhatDSQuaFrame extends JFrame {
     }
 
     public void huyButtonActionPerformed(java.awt.event.ActionEvent evt){
-        this.dispose();
+        this.close();
     }
 
     public   boolean check(List<PhanQuaModel> list) throws SQLException, ClassNotFoundException {
@@ -176,6 +177,21 @@ public class CapNhatDSQuaFrame extends JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Thông tin sai!");
                 return false;
             }
+        }
+        return true;
+    }
+
+    private boolean validateValueInForm() {
+        try {
+            for(int i=0; i<data.size(); i++){
+                Vector v = (Vector) data.get(i);
+                v.setSize(4);
+                String gt = String.valueOf(v.get(3));
+                Integer.parseInt(gt);
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập đúng định dạng trường", "Warning", JOptionPane.WARNING_MESSAGE);
+            return false;
         }
         return true;
     }
@@ -203,4 +219,7 @@ public class CapNhatDSQuaFrame extends JFrame {
     }
 
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }

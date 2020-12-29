@@ -21,8 +21,9 @@ public class PhatQuaPane extends javax.swing.JPanel {
     private DSQuaService dsQuaService;
 
     public PhatQuaPane(JFrame parentFrame) throws SQLException, ClassNotFoundException {
-        this.add(rootPane);
         this.parentJFrame = parentFrame;
+        this.setSize(GuiConstants.getPaneInitWidth(), GuiConstants.getPaneInitHeight());
+        this.add(rootPane);
         initComponents();
         controller = new PhatQuaPaneController(tablePanel, jtfSearch);
         controller.setParentJFrame(parentJFrame);

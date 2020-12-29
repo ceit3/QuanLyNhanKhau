@@ -128,8 +128,10 @@ public class ThongKeHoPaneController {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(toTxf, "Vui lòng nhập đúng kiểu dữ liệu!!", "Warring", JOptionPane.ERROR_MESSAGE);
+        }finally {
+            setDataTable(name, from, to);
         }
-        setDataTable(name, from, to);
+
     }
 
     public void setDataTable(String name, int from, int to) throws SQLException, ClassNotFoundException {

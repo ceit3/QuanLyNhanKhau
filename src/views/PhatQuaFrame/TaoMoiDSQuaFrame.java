@@ -130,7 +130,7 @@ public class TaoMoiDSQuaFrame extends JFrame{
                // boolean t = dsQuaService.addDS(this.dsQuaModel);
                 if (dsQuaService.addDS(this.dsQuaModel)) {
                     JOptionPane.showMessageDialog(rootPane, "Thêm thành công!!");
-                    //close();
+                    this.close();
                     parentController.refreshData();
                 }
             } catch (SQLException e) {
@@ -142,7 +142,7 @@ public class TaoMoiDSQuaFrame extends JFrame{
     }
 
     public void huyButtonActionPerformed(java.awt.event.ActionEvent evt){
-        this.dispose();
+        this.close();
     }
     private boolean validateValueInForm() {
         if(tenDSTextField.getText().trim().isEmpty()
@@ -150,6 +150,20 @@ public class TaoMoiDSQuaFrame extends JFrame{
                 || namTextField.getText().trim().isEmpty()
         ){
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập hết các trường bắt buộc", "Warning", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        try {
+            String temp = namTextField.getText();
+            if (temp != null)
+                Integer.parseInt(temp);
+            for(int i=0; i<data.size(); i++){
+                Vector v = (Vector) data.get(i);
+                v.setSize(3);
+                String gt = String.valueOf(v.get(2));
+                Integer.parseInt(gt);
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập đúng định dạng trường", "Warning", JOptionPane.WARNING_MESSAGE);
             return false;
         }
         return true;
@@ -176,7 +190,7 @@ public class TaoMoiDSQuaFrame extends JFrame{
             qua.setIdNguoiNhan(id);
             qua.setTenQua((String) v.get(1));
             String gt = String.valueOf(v.get(2));
-            qua.setGiaTri( Integer.parseInt(gt));
+            qua.setGiaTri(Integer.parseInt(gt));
             dsQuaModel.setGiaTriQua(qua.getGiaTri());
             list.add(qua);
         }

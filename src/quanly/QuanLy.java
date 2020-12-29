@@ -14,10 +14,10 @@ public class QuanLy {
     public static Calendar calendar = Calendar.getInstance();
     
     public static void main(String[] args){
-        try {
+        /*try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-        }
+        }*/
 //        MainFrame mainFrame = new MainFrame();
 //        mainFrame.setLocationRelativeTo(null);
 //        mainFrame.setResizable(false);

@@ -18,6 +18,7 @@ public class ThongKeHoPane extends JPanel{
 
     public ThongKeHoPane(JFrame parentFrame) throws SQLException, ClassNotFoundException {
         this.parentFrame = parentFrame;
+        this.setSize(GuiConstants.getPaneInitWidth(), GuiConstants.getPaneInitHeight());
         this.add(rootPane);
         this.controller = new ThongKeHoPaneController(chuHoTxf, fromTxf, toTxf,tableJpn);
         this.controller.setDataTable("",0,2100);

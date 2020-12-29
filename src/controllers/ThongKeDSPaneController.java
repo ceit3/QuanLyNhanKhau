@@ -73,14 +73,16 @@ public class ThongKeDSPaneController {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(toTxf, "Vui lòng nhập đúng kiểu dữ liệu!!", "Warring", JOptionPane.ERROR_MESSAGE);
+        }finally {
+            if(type.compareTo("DS Qua") == 0){
+                this.listDSQua = dsQuaService.filtDSQua(this.from, this.to);
+                setDataTableQua(listDSQua);
+            }else{
+                this.listDSThuong = dsThuongService.filtDSThuong(this.from, this.to);
+                setDataTableThuong(listDSThuong);
+            }
         }
-        if(type == "DS Qua"){
-            this.listDSQua = dsQuaService.filtDSQua(this.from, this.to);
-            setDataTableQua(listDSQua);
-        }else{
-            this.listDSThuong = dsThuongService.filtDSThuong(this.from, this.to);
-            setDataTableThuong(listDSThuong);
-        }
+
     }
 
     private void setDataTableThuong(List<DSThuongModel> listDSThuong) {

@@ -10,6 +10,7 @@ import models.PhanQuaModel;
 import models.PhanThuongModel;
 import services.DSQuaService;
 import services.DSThuongService;
+import views.GuiConstants;
 import views.PhatQuaFrame.TaoMoiDSQuaFrame;
 
 import javax.swing.*;
@@ -63,7 +64,7 @@ public class TaoMoiDSThuongFrame extends JFrame{
         this.list = new ArrayList<>();
         initComponents();
         setTitle("Tạo mới danh sách thưởng");
-        setSize(1300,400);
+        setSize(1300,600);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.controller = new TaoMoiDSThuongController();
 
@@ -131,7 +132,7 @@ public class TaoMoiDSThuongFrame extends JFrame{
     }
 
     public void taoMoiButtonActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, ClassNotFoundException {//GEN-FIRST:event_CreateBtnActionPerformed
-        if (validateValueInForm() && check(this.list)) {
+        if (validateValueInForm() && check()) {
             loadDataTable(this.list);
 
             this.dsThuongModel.setTenDS(tenDSTextField.getText());
@@ -140,7 +141,7 @@ public class TaoMoiDSThuongFrame extends JFrame{
             try {
                 if (dsThuongService.addDS(this.dsThuongModel)) {
                     JOptionPane.showMessageDialog(null, "Thêm thành công!!");
-                    close();
+                    this.close();
                     parentController.refreshData();
                 }
             } catch (Exception e) {
@@ -152,7 +153,7 @@ public class TaoMoiDSThuongFrame extends JFrame{
     }
 
     public void huyButtonActionPerformed(java.awt.event.ActionEvent evt){
-        this.dispose();
+        this.close();
     }
     private boolean validateValueInForm() {
         if(tenDSTextField.getText().trim().isEmpty()
@@ -161,19 +162,47 @@ public class TaoMoiDSThuongFrame extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập hết các trường bắt buộc", "Warning", JOptionPane.WARNING_MESSAGE);
             return false;
         }
-        return true;
-    }
 
-    public   boolean check(List<PhanThuongModel> list) throws SQLException, ClassNotFoundException {
-        for(PhanThuongModel q:list){
-            int tmp = q.getIdNguoiNhan() ;
-            if(tmp == -1 ){
-                JOptionPane.showMessageDialog(rootPane, "Thong tin sai!");
-                return false;
+        try {
+            String temp = namTxf.getText();
+            if (temp != null)
+                Integer.parseInt(temp);
+            for(int i=0; i<data.size(); i++){
+                Vector v = (Vector) data.get(i);
+                v.setSize(4);
+                String gt = String.valueOf(v.get(3));
+                Integer.parseInt(gt);
             }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập đúng định dạng trường", "Warning", JOptionPane.WARNING_MESSAGE);
+            return false;
         }
         return true;
     }
+
+    public   boolean check() throws SQLException, ClassNotFoundException {
+        try {
+            for (int i = 0; i < data.size(); i++) {
+                Vector v = (Vector) data.get(i);
+                v.setSize(4);
+                String gt = String.valueOf(v.get(0));
+                PhanThuongModel q = new PhanThuongModel();
+                int tmp = q.getIdNguoiNhan(gt);
+                System.out.println("NO"+tmp);
+                if (tmp == 0) {
+                    JOptionPane.showMessageDialog(rootPane, "Thong tin sai!");
+                    return false;
+                }
+            }
+        }catch (Exception e){
+                JOptionPane.showMessageDialog(rootPane, "Thong tin sai!");
+                return false;
+            }
+
+
+        return true;
+    }
+
     public void loadDataTable(List<PhanThuongModel> list) throws SQLException, ClassNotFoundException {
         int tong=0;
         for(int i=0; i<data.size(); i++){

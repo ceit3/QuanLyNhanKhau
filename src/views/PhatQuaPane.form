@@ -2,28 +2,26 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.PhatQuaPane">
   <grid id="27dc6" binding="rootPane" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="500" height="444"/>
+      <xy x="20" y="20" width="1200" height="800"/>
     </constraints>
-    <properties/>
-    <border type="none"/>
+    <properties>
+      <background color="-1708562"/>
+      <font size="12" style="1"/>
+      <minimumSize width="1200" height="800"/>
+      <opaque value="true"/>
+      <preferredSize width="1200" height="800"/>
+    </properties>
+    <border type="none" title="Phát Quà"/>
     <children>
-      <component id="9ad7e" class="javax.swing.JButton" binding="addNewBtn">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-          <gridbag top="15" left="0" bottom="0" right="0" weightx="0.3" weighty="0.2"/>
-        </constraints>
-        <properties>
-          <text value="Tạo Mới"/>
-        </properties>
-      </component>
       <component id="635aa" class="javax.swing.JTextField" binding="jtfSearch">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="15" left="15" bottom="0" right="15" weightx="1.0" weighty="0.5"/>
+          <gridbag top="15" left="0" bottom="0" right="15" weightx="1.0" weighty="0.5"/>
         </constraints>
         <properties>
+          <preferredSize width="124" height="40"/>
           <text value="Nhập tên danh sách"/>
         </properties>
       </component>
@@ -35,10 +33,16 @@
       </vspacer>
       <component id="b0c27" class="javax.swing.JButton" binding="updateBtn">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.3" weighty="0.5"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="15" bottom="0" right="15" weightx="0.3" weighty="0.5"/>
         </constraints>
         <properties>
+          <background color="-10329502"/>
+          <font size="14" style="1"/>
+          <foreground color="-1"/>
+          <maximumSize width="100" height="40"/>
+          <minimumSize width="20" height="20"/>
+          <preferredSize width="100" height="40"/>
           <text value="Cập Nhật"/>
         </properties>
       </component>
@@ -46,12 +50,29 @@
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="5" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
+          <gridbag top="15" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1708562"/>
+        </properties>
         <border type="none"/>
         <children/>
       </grid>
+      <component id="9ad7e" class="javax.swing.JButton" binding="addNewBtn">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="15" left="15" bottom="0" right="15" weightx="0.3" weighty="0.2"/>
+        </constraints>
+        <properties>
+          <background color="-10329502"/>
+          <font size="14" style="1"/>
+          <foreground color="-1"/>
+          <maximumSize width="100" height="40"/>
+          <minimumSize width="20" height="20"/>
+          <preferredSize width="100" height="40"/>
+          <text value="Tạo Mới"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

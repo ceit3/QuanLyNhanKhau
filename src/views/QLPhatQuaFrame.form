@@ -2,17 +2,21 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.QLPhatQuaFrame">
   <grid id="27dc6" binding="rootPane" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="515" height="535"/>
+      <xy x="20" y="20" width="535" height="535"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-3748145"/>
+    </properties>
     <border type="none"/>
     <children>
       <grid id="4fa26" binding="viewPane" layout-manager="GridBagLayout">
         <constraints>
-          <grid row="0" column="1" row-span="10" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="9" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="5.0" weighty="1.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1708562"/>
+        </properties>
         <border type="none"/>
         <children/>
       </grid>
@@ -21,90 +25,138 @@
           <grid row="0" column="0" row-span="5" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="1.0" weighty="0.5"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-3748145"/>
+          <font size="14" style="1"/>
+          <preferredSize width="200" height="450"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="1cd2" class="javax.swing.JButton" binding="homeButton">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag top="40" left="0" bottom="0" right="0" weightx="1.0" weighty="0.0"/>
+              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag top="40" left="0" bottom="0" right="0" weightx="1.5" weighty="0.0"/>
             </constraints>
             <properties>
-              <maximumSize width="78" height="50"/>
+              <background color="-16013503"/>
+              <focusable value="false"/>
+              <font size="14" style="1"/>
+              <foreground color="-1"/>
+              <icon value="Icons/home.png"/>
+              <maximumSize width="500" height="60"/>
               <minimumSize width="78" height="50"/>
-              <preferredSize width="78" height="50"/>
+              <preferredSize width="200" height="60"/>
               <text value="Trang Chủ"/>
             </properties>
           </component>
-          <hspacer id="d42d8">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-          </hspacer>
           <component id="800c6" class="javax.swing.JButton" binding="dsThuongButton">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
+              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <maximumSize width="78" height="40"/>
+              <background color="-15790321"/>
+              <borderPainted value="true"/>
+              <defaultCapable value="true"/>
+              <enabled value="true"/>
+              <focusPainted value="true"/>
+              <focusTraversalPolicyProvider value="false"/>
+              <focusable value="false"/>
+              <font size="14" style="1"/>
+              <foreground color="-1"/>
+              <horizontalAlignment value="2"/>
+              <icon value="Icons/list-xxl.png"/>
+              <maximumSize width="500" height="100"/>
               <minimumSize width="78" height="40"/>
-              <preferredSize width="78" height="40"/>
+              <opaque value="true"/>
+              <preferredSize width="200" height="50"/>
               <text value="Danh Sách Thưởng"/>
+              <verifyInputWhenFocusTarget value="true"/>
             </properties>
           </component>
           <component id="611cf" class="javax.swing.JButton" binding="dsQuaButton">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
+              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <maximumSize width="78" height="40"/>
+              <background color="-15790321"/>
+              <focusable value="false"/>
+              <font size="14" style="1"/>
+              <foreground color="-1"/>
+              <horizontalAlignment value="2"/>
+              <icon value="Icons/list-xxl.png"/>
+              <maximumSize width="500" height="50"/>
               <minimumSize width="78" height="40"/>
-              <preferredSize width="78" height="40"/>
+              <preferredSize width="200" height="50"/>
               <text value="Danh Sách Quà"/>
-            </properties>
-          </component>
-          <component id="cd956" class="javax.swing.JButton" binding="tkeDsButton">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <maximumSize width="78" height="40"/>
-              <minimumSize width="78" height="40"/>
-              <preferredSize width="78" height="40"/>
-              <text value="Thống kê theo Danh Sách"/>
             </properties>
           </component>
           <component id="9a708" class="javax.swing.JButton" binding="tkeHoButton">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
+              <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <maximumSize width="78" height="40"/>
+              <autoscrolls value="true"/>
+              <background color="-15790321"/>
+              <focusable value="false"/>
+              <font size="14" style="1"/>
+              <foreground color="-1"/>
+              <horizontalAlignment value="2"/>
+              <icon value="Icons/increasing-stocks-graphic.png"/>
+              <maximumSize width="500" height="50"/>
               <minimumSize width="78" height="40"/>
-              <preferredSize width="78" height="40"/>
+              <preferredSize width="200" height="50"/>
               <text value="Thống kê theo Hộ"/>
             </properties>
           </component>
           <component id="f6749" class="javax.swing.JButton" binding="logOutBtn">
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
+              <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag top="100" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
+              <background color="-4844282"/>
+              <focusable value="false"/>
+              <font size="14" style="1"/>
+              <foreground color="-1"/>
+              <icon value="Icons/logout-white.png"/>
+              <maximumSize width="500" height="50"/>
+              <minimumSize width="78" height="50"/>
+              <preferredSize width="200" height="50"/>
               <text value="Đăng xuất"/>
             </properties>
           </component>
-          <vspacer id="3a748">
+          <component id="cd956" class="javax.swing.JButton" binding="tkeDsButton">
             <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0" ipady="100"/>
+              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
             </constraints>
-          </vspacer>
+            <properties>
+              <background color="-15790321"/>
+              <focusable value="false"/>
+              <font size="14" style="1"/>
+              <foreground color="-1"/>
+              <horizontalAlignment value="2"/>
+              <icon value="Icons/stat-icon-bars.png"/>
+              <maximumSize width="500" height="50"/>
+              <minimumSize width="78" height="40"/>
+              <preferredSize width="200" height="50"/>
+              <text value="Thống kê theo DS"/>
+            </properties>
+          </component>
+          <component id="ff400" class="javax.swing.JLabel" binding="userLb">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="20" left="15" bottom="5" right="0" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <font size="14" style="1"/>
+              <icon value="Icons/user.png"/>
+              <text value=""/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>
