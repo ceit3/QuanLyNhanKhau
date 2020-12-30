@@ -83,7 +83,7 @@ public class DSQuaModel {
 				+"<p>Thời gian: <b>"+this.thoiGian+"</p>"
 				+ "<p>Số lượng: <b>" + s + "</p>"
 				+"<p>Tổng chi phí: <b>"+this.tongChiPhi+"</p>"
-				+ "<h4>Danh sach các phần quà</h4>"
+				+ "<h4>Danh sách các phần quà</h4>"
 				+ "<table>"
                 + "<tr>"
                 + "<th>Tên người nhận</th>"
